@@ -16,9 +16,9 @@ typedef enum {
 } WebRequestMethod;
 ``` 
 
-As shown above, it compile fine of the members are renamed. 
+As shown above, it compiles fine by renaming the members. 
 
-To allow coexistance of ESPAsyncWebServer with this modified ESPAsyncWebServer it is renamed to ESPAsyncWebServerA, too.
+To allow coexistence of ESPAsyncWebServer with this modified ESPAsyncWebServer it is renamed to ESPAsyncWebServerA, too.
 
 
 # Get the original
