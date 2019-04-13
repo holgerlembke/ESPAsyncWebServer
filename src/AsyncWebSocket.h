@@ -29,7 +29,7 @@
 #include <ESPAsyncTCP.h>
 #define WS_MAX_QUEUED_MESSAGES 8
 #endif
-#include <ESPAsyncWebServer.h>
+#include <ESPAsyncWebServerA.h>
 
 class AsyncWebSocket;
 class AsyncWebSocketResponse;

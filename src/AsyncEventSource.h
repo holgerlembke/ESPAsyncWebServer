@@ -26,7 +26,7 @@
 #else
 #include <ESPAsyncTCP.h>
 #endif
-#include <ESPAsyncWebServer.h>
+#include <ESPAsyncWebServerA.h>
 
 class AsyncEventSource;
 class AsyncEventSourceResponse;

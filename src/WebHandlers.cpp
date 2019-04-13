@@ -18,7 +18,7 @@
   License along with this library; if not, write to the Free Software
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-#include "ESPAsyncWebServer.h"
+#include "ESPAsyncWebServerA.h"
 #include "WebHandlerImpl.h"
 
 AsyncStaticWebHandler::AsyncStaticWebHandler(const char* uri, FS& fs, const char* path, const char* cache_control)
@@ -81,7 +81,7 @@ AsyncStaticWebHandler& AsyncStaticWebHandler::setLastModified(){
 }
 #endif
 bool AsyncStaticWebHandler::canHandle(AsyncWebServerRequest *request){
-  if(request->method() != HTTP_GET 
+  if(request->method() != aHTTP_GET 
     || !request->url().startsWith(_uri) 
     || !request->isExpectedRequestedConnType(RCT_DEFAULT, RCT_HTTP)
   ){

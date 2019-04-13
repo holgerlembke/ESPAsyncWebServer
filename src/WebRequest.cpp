@@ -18,7 +18,7 @@
   License along with this library; if not, write to the Free Software
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-#include "ESPAsyncWebServer.h"
+#include "ESPAsyncWebServerA.h"
 #include "WebResponseImpl.h"
 #include "WebAuthentication.h"
 
@@ -40,7 +40,7 @@ AsyncWebServerRequest::AsyncWebServerRequest(AsyncWebServer* s, AsyncClient* c)
   , _temp()
   , _parseState(0)
   , _version(0)
-  , _method(HTTP_ANY)
+  , _method(aHTTP_ANY)
   , _url()
   , _host()
   , _contentType()
@@ -253,19 +253,19 @@ bool AsyncWebServerRequest::_parseReqHead(){
   _temp = _temp.substring(index+1);
 
   if(m == "GET"){
-    _method = HTTP_GET;
+    _method = aHTTP_GET;
   } else if(m == "POST"){
-    _method = HTTP_POST;
+    _method = aHTTP_POST;
   } else if(m == "DELETE"){
-    _method = HTTP_DELETE;
+    _method = aHTTP_DELETE;
   } else if(m == "PUT"){
-    _method = HTTP_PUT;
+    _method = aHTTP_PUT;
   } else if(m == "PATCH"){
-    _method = HTTP_PATCH;
+    _method = aHTTP_PATCH;
   } else if(m == "HEAD"){
-    _method = HTTP_HEAD;
+    _method = aHTTP_HEAD;
   } else if(m == "OPTIONS"){
-    _method = HTTP_OPTIONS;
+    _method = aHTTP_OPTIONS;
   }
 
   String g = String();
@@ -967,14 +967,14 @@ String AsyncWebServerRequest::urlDecode(const String& text) const {
 
 
 const char * AsyncWebServerRequest::methodToString() const {
-  if(_method == HTTP_ANY) return "ANY";
-  else if(_method & HTTP_GET) return "GET";
-  else if(_method & HTTP_POST) return "POST";
-  else if(_method & HTTP_DELETE) return "DELETE";
-  else if(_method & HTTP_PUT) return "PUT";
-  else if(_method & HTTP_PATCH) return "PATCH";
-  else if(_method & HTTP_HEAD) return "HEAD";
-  else if(_method & HTTP_OPTIONS) return "OPTIONS";
+  if(_method == aHTTP_ANY) return "ANY";
+  else if(_method & aHTTP_GET) return "GET";
+  else if(_method & aHTTP_POST) return "POST";
+  else if(_method & aHTTP_DELETE) return "DELETE";
+  else if(_method & aHTTP_PUT) return "PUT";
+  else if(_method & aHTTP_PATCH) return "PATCH";
+  else if(_method & aHTTP_HEAD) return "HEAD";
+  else if(_method & aHTTP_OPTIONS) return "OPTIONS";
   return "UNKNOWN";
 }
 
